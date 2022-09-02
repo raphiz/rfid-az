@@ -1,0 +1,9 @@
+# vnedor id and bus id fetched as follows:
+# lsusb  | grep RFID
+# 
+# SUBSYSTEM=="input", ACTION=="add", ATTRS{manufacturer}=="Sycreader RFID Technology Co., Ltd", ATTR{idProduct}=="0035", RUN+="/bin/sh -c 'echo remove > /sys$env{DEVPATH}/uevent'"
+# ACTION=="add", ATTRS{manufacturer}=="Sycreader RFID Technology Co., Ltd", ATTR{idProduct}=="0035", SYMLINK+="rfid"
+
+# Disable default input
+# SUBSYSTEM=="input", ACTION=="add", ATTRS{idVendor}=="ffff", ATTRS{idProduct}=="0035", RUN+="/bin/sh -c 'echo remove > /sys$env{DEVPATH}/uevent'"
+SUBSYSTEM=="input", ACTION=="add", ATTRS{idVendor}=="ffff", ATTRS{idProduct}=="0035", SYMLINK+="rfid",  MODE="0666"

@@ -1,0 +1,3 @@
+
+rootProject.name = "rfid-az"
+
