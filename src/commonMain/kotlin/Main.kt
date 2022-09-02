@@ -14,16 +14,14 @@ val tags = mapOf(
 )
 
 fun main() = runBlocking {
-    FileSystem.SYSTEM.appendingSink("rfid_log.csv".toPath(), false).buffer().use { sink ->
-        println("Waiting for RFID tags...")
+    println("Waiting for RFID tags...")
 
-        streamRfidTags().collect {
-            val now = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
-            val activity = tags.getOrElse(it) { it }
-            println("Starting $activity")
+    streamRfidTags().collect {
+        val now = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
+        val activity = tags.getOrElse(it) { it }
+        println("Starting $activity")
+        FileSystem.SYSTEM.appendingSink("rfid_log.csv".toPath(), false).buffer().use { sink ->
             sink.writeUtf8("${now.date},${now.time},$activity\n")
-            sink.flush()
         }
     }
-
 }
