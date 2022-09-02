@@ -38,7 +38,7 @@ actual suspend fun streamRfidTags(): Flow<String> = flow {
 suspend fun FileDescriptor.readEvent(event: input_event, block: suspend () -> Unit) {
     when (read(this, event.ptr, sizeOf<input_event>().toULong())) {
         0L -> throw IllegalStateException("EOF while reading event")
-        1L -> throw IllegalStateException("Error reading event")
+        -1L -> throw IllegalStateException("Error reading event. Is the RFID reader connected?")
         else -> block()
     }
 }
