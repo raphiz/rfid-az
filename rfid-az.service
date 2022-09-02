@@ -3,6 +3,8 @@ Description=RFID AZ
 
 [Service]
 ExecStart=/home/raphiz/projects/experiments/rfid-az/build/bin/linuxX64/releaseExecutable/rfid-az.kexe
+Restart=always
+RestartSec=30
 
 [Install]
 WantedBy=default.target
