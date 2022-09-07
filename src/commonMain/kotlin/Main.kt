@@ -9,8 +9,13 @@ import okio.use
 
 
 val tags = mapOf(
-    "0004968733" to "Entwicklung",
-    "0007601190" to "Pause",
+    "0007607995" to "Admin",
+    "0007557184" to "Pause",
+    "0007565508" to "Daily",
+    "0007584024" to "Other",
+    "0007364898" to "PR Review",
+    "0007586333" to "Entwicklung",
+    "0007611008" to "Meeting",
 )
 
 fun main() = runBlocking {
