@@ -32,3 +32,4 @@ Alternativ kann auch `cat /proc/bus/input/devices` genutzt werden.
 * [Linux – How to read input from the hosts keyboard when connected via SSH – Unix Server Solutions](https://super-unix.com/superuser/how-to-read-input-from-the-hosts-keyboard-when-connected-via-ssh/)
 * [c - Accessing Keys from Linux Input Device - Stack Overflow](https://stackoverflow.com/questions/20943322/accessing-keys-from-linux-input-device)
 * [linux/input-event-codes.h at master · torvalds/linux](https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h)
+* [Starting systemd service instance for device from udev](https://blog.fraggod.net/2015/01/12/starting-systemd-service-instance-for-device-from-udev.html)
